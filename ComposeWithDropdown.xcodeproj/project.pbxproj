@@ -11,6 +11,16 @@
 		C8448A39282685BD00597A6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A38282685BD00597A6F /* ContentView.swift */; };
 		C8448A3B282685BE00597A6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8448A3A282685BE00597A6F /* Assets.xcassets */; };
 		C8448A3E282685BE00597A6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8448A3D282685BE00597A6F /* Preview Assets.xcassets */; };
+		C8448A4728268C5300597A6F /* Cartoon Big Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8448A4628268C5300597A6F /* Cartoon Big Win.wav */; };
+		C8448A4928268C8F00597A6F /* Bright Right Answer 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8448A4828268C8F00597A6F /* Bright Right Answer 4.wav */; };
+		C8448A4B28268CAE00597A6F /* Cartoon Brass Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8448A4A28268CAE00597A6F /* Cartoon Brass Fail.wav */; };
+		C8448A4D28268CDC00597A6F /* Button Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8448A4C28268CDC00597A6F /* Button Ding.wav */; };
+		C8448A4F28268CF600597A6F /* Chatroom Send.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8448A4E28268CF600597A6F /* Chatroom Send.wav */; };
+		C8448A5128268D7B00597A6F /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5028268D7B00597A6F /* Lesson.swift */; };
+		C8448A5328268D8D00597A6F /* LessonToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5228268D8D00597A6F /* LessonToday.swift */; };
+		C8448A5528268DA400597A6F /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5428268DA400597A6F /* MyTheme.swift */; };
+		C8448A5728268DB800597A6F /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5628268DB800597A6F /* SoundManager.swift */; };
+		C8448A5928268DDC00597A6F /* MyMenuStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5828268DDC00597A6F /* MyMenuStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +30,16 @@
 		C8448A3A282685BE00597A6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8448A3D282685BE00597A6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8448A3F282685BE00597A6F /* ComposeWithDropdown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComposeWithDropdown.entitlements; sourceTree = "<group>"; };
+		C8448A4628268C5300597A6F /* Cartoon Big Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Cartoon Big Win.wav"; sourceTree = "<group>"; };
+		C8448A4828268C8F00597A6F /* Bright Right Answer 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bright Right Answer 4.wav"; sourceTree = "<group>"; };
+		C8448A4A28268CAE00597A6F /* Cartoon Brass Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Cartoon Brass Fail.wav"; sourceTree = "<group>"; };
+		C8448A4C28268CDC00597A6F /* Button Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Ding.wav"; sourceTree = "<group>"; };
+		C8448A4E28268CF600597A6F /* Chatroom Send.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Chatroom Send.wav"; sourceTree = "<group>"; };
+		C8448A5028268D7B00597A6F /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		C8448A5228268D8D00597A6F /* LessonToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonToday.swift; sourceTree = "<group>"; };
+		C8448A5428268DA400597A6F /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
+		C8448A5628268DB800597A6F /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		C8448A5828268DDC00597A6F /* MyMenuStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +72,17 @@
 		C8448A35282685BD00597A6F /* ComposeWithDropdown */ = {
 			isa = PBXGroup;
 			children = (
+				C8448A4528268C0A00597A6F /* Sounds */,
 				C8448A36282685BD00597A6F /* ComposeWithDropdownApp.swift */,
 				C8448A38282685BD00597A6F /* ContentView.swift */,
 				C8448A3A282685BE00597A6F /* Assets.xcassets */,
 				C8448A3F282685BE00597A6F /* ComposeWithDropdown.entitlements */,
 				C8448A3C282685BE00597A6F /* Preview Content */,
+				C8448A5028268D7B00597A6F /* Lesson.swift */,
+				C8448A5228268D8D00597A6F /* LessonToday.swift */,
+				C8448A5428268DA400597A6F /* MyTheme.swift */,
+				C8448A5628268DB800597A6F /* SoundManager.swift */,
+				C8448A5828268DDC00597A6F /* MyMenuStyle.swift */,
 			);
 			path = ComposeWithDropdown;
 			sourceTree = "<group>";
@@ -67,6 +93,18 @@
 				C8448A3D282685BE00597A6F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8448A4528268C0A00597A6F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C8448A4E28268CF600597A6F /* Chatroom Send.wav */,
+				C8448A4C28268CDC00597A6F /* Button Ding.wav */,
+				C8448A4A28268CAE00597A6F /* Cartoon Brass Fail.wav */,
+				C8448A4828268C8F00597A6F /* Bright Right Answer 4.wav */,
+				C8448A4628268C5300597A6F /* Cartoon Big Win.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +167,11 @@
 			files = (
 				C8448A3E282685BE00597A6F /* Preview Assets.xcassets in Resources */,
 				C8448A3B282685BE00597A6F /* Assets.xcassets in Resources */,
+				C8448A4728268C5300597A6F /* Cartoon Big Win.wav in Resources */,
+				C8448A4928268C8F00597A6F /* Bright Right Answer 4.wav in Resources */,
+				C8448A4B28268CAE00597A6F /* Cartoon Brass Fail.wav in Resources */,
+				C8448A4F28268CF600597A6F /* Chatroom Send.wav in Resources */,
+				C8448A4D28268CDC00597A6F /* Button Ding.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8448A5128268D7B00597A6F /* Lesson.swift in Sources */,
+				C8448A5528268DA400597A6F /* MyTheme.swift in Sources */,
+				C8448A5328268D8D00597A6F /* LessonToday.swift in Sources */,
 				C8448A39282685BD00597A6F /* ContentView.swift in Sources */,
 				C8448A37282685BD00597A6F /* ComposeWithDropdownApp.swift in Sources */,
+				C8448A5928268DDC00597A6F /* MyMenuStyle.swift in Sources */,
+				C8448A5728268DB800597A6F /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
