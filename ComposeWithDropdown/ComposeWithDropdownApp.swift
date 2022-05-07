@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ComposeWithDropdownApp: App {
+	@StateObject var lessonToday = LessonToday()
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			WelcomeView().environmentObject(lessonToday)
 		}
 	}
 }

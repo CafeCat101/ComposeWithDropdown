@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "paper-1-dark.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "paper-1-dark-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "paper-1-dark-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

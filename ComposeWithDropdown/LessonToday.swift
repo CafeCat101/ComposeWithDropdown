@@ -18,7 +18,7 @@ class LessonToday: ObservableObject {
 	@Published var language = "en"
 	@Published var at = 0
 	@Published var myTheme:MyTheme = MyTheme()
-	@Published var userFolderPath = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/macos_lesson/ComposeWithDropdown").path
+	@Published var userFolderPath = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/class_writing/macos/ComposeWithScrollerDropdown").path
 	
 	init() {
 		loadLocalFile(forName: "lesson-type_simple_answer")

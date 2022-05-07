@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Victory.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Victory-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Victory-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

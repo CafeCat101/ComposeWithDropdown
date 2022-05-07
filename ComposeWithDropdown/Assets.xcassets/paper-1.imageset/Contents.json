@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Paper-1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Paper-2.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Paper-3.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

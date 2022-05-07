@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "02_Chalkboard_green.jpg",
+      "filename" : "03_Chalkboard BG.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "02_Chalkboard_green-1.jpg",
+      "filename" : "03_Chalkboard BG-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "02_Chalkboard_green-2.jpg",
+      "filename" : "03_Chalkboard BG-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
