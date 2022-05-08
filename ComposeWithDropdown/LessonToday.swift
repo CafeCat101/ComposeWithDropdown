@@ -26,7 +26,7 @@ class LessonToday: ObservableObject {
 	
 	private func loadLocalFile() {
 		do {
-			let appConfigFile = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/macos_lesson/app_config.json").path
+			let appConfigFile = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/macos_lesson/ComposeWithDropdownConfig.json").path
 			if let jsonConfigData = try String(contentsOfFile: appConfigFile).data(using: .utf8) {
 				
 				let decodedConfigData = try JSONDecoder().decode([LessonAppConfig].self, from: jsonConfigData)
