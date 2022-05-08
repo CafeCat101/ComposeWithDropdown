@@ -9,36 +9,61 @@ import Foundation
 import SwiftUI
 
 class LessonToday: ObservableObject {
-	@Published var subject:String = "我們來組句子！"
+	@Published var subject:String = "Let's compose a sentence(demo)！"
 	@Published var quiz: [Quiz] = [
-		Quiz(asking: "草是什麼顏色？", answer: ["草是","綠色的","。"], options:[], picture:""),
-		Quiz(asking: "雲是什麼顏色？", answer: ["雲是","白色的","。"], options:[], picture:"")
+		Quiz(asking: "What color is the grass?", answer: ["The grass"," is"," green."], options:[], picture:""),
+		Quiz(asking: "What color is the cloud?", answer: ["The cloud"," is"," white."], options:[], picture:"")
 	]
 	@Published var optionShuffled = false
 	@Published var language = "en"
 	@Published var at = 0
 	@Published var myTheme:MyTheme = MyTheme()
-	@Published var userFolderPath = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/class_writing/macos/ComposeWithScrollerDropdown").path
+	@Published var userFolderPath = ""
 	
 	init() {
-		loadLocalFile(forName: "lesson-type_simple_answer")
+		loadLocalFile()
 	}
 	
-	private func loadLocalFile(forName name: String) {
+	private func loadLocalFile() {
 		do {
-			let lessonFile = userFolderPath+"/lesson_today.json"
-			if let jsonData = try String(contentsOfFile: lessonFile).data(using: .utf8) {
-				let decodedData = try JSONDecoder().decode(Lesson.self, from: jsonData)
-				subject = decodedData.subject
-				quiz = decodedData.quiz
-				optionShuffled = decodedData.optionshuffled
-				language = decodedData.language
+			let appConfigFile = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+"/Ege/macos_lesson/app_config.json").path
+			if let jsonConfigData = try String(contentsOfFile: appConfigFile).data(using: .utf8) {
 				
-				myTheme = MyTheme(setThemeName: decodedData.theme)
+				let decodedConfigData = try JSONDecoder().decode([LessonAppConfig].self, from: jsonConfigData)
+				
+				for study in decodedConfigData {
+					print("\(study.title)")
+					print("\(study.active)")
+					if study.active {
+						do {
+							userFolderPath = URL(fileURLWithPath: FileManager.default.homeDirectoryForCurrentUser.path+study.dir).path
+							let lessonFile = userFolderPath+"/"+study.file
+							if let jsonData = try String(contentsOfFile: lessonFile).data(using: .utf8) {
+								let decodedData = try JSONDecoder().decode(Lesson.self, from: jsonData)
+								subject = decodedData.subject
+								quiz = decodedData.quiz
+								optionShuffled = decodedData.optionshuffled
+								language = decodedData.language
+								
+								myTheme = MyTheme(setThemeName: decodedData.theme)
+							}
+						} catch {
+							print(error)
+						}
+						break;
+					}
+					
+				}
+				
+				
+			}else{
+				print("failed to get content from app config")
 			}
 		} catch {
 			print(error)
 		}
+		
+		
 	}
 	
 	

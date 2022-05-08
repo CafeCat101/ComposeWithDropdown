@@ -26,6 +26,7 @@
 		C8448A5F2826DF6800597A6F /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A5E2826DF6800597A6F /* CorrectAnswerView.swift */; };
 		C8448A612826DF8F00597A6F /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A602826DF8F00597A6F /* WrongAnswerView.swift */; };
 		C8448A632826DFAF00597A6F /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A622826DFAF00597A6F /* FinishedView.swift */; };
+		C8448A652826E7DB00597A6F /* LessonAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8448A642826E7DB00597A6F /* LessonAppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C8448A5E2826DF6800597A6F /* CorrectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		C8448A602826DF8F00597A6F /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
 		C8448A622826DFAF00597A6F /* FinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
+		C8448A642826E7DB00597A6F /* LessonAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				C8448A3F282685BE00597A6F /* ComposeWithDropdown.entitlements */,
 				C8448A3C282685BE00597A6F /* Preview Content */,
 				C8448A5028268D7B00597A6F /* Lesson.swift */,
+				C8448A642826E7DB00597A6F /* LessonAppConfig.swift */,
 				C8448A5228268D8D00597A6F /* LessonToday.swift */,
 				C8448A5428268DA400597A6F /* MyTheme.swift */,
 				C8448A5628268DB800597A6F /* SoundManager.swift */,
@@ -209,6 +212,7 @@
 				C8448A5F2826DF6800597A6F /* CorrectAnswerView.swift in Sources */,
 				C8448A5D2826DF0D00597A6F /* QuestionView.swift in Sources */,
 				C8448A5728268DB800597A6F /* SoundManager.swift in Sources */,
+				C8448A652826E7DB00597A6F /* LessonAppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
