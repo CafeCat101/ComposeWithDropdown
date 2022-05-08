@@ -19,6 +19,7 @@ struct QuestionView: View {
 	@State private var showAnswer = false
 	@State private var testSentence = ["Pingu"," and"," Robby"," like to"," go"," skiing.","Pingu"," and"," Robby"," like to"," go"," skiing."]
 	@State private var getOptions:[String] = []
+	@State private var answerButtonLabel = "Answer"
 	
 	var body: some View {
 		if goToView == "QuestionView"{
@@ -70,7 +71,7 @@ struct QuestionView: View {
 							
 							if showAnswerBtn == false {
 								Menu {
-									ForEach(0..<getOptions.count) { index in
+									ForEach(0..<getOptions.count, id:\.self) { index in
 										Button(action:{
 											self.pickAWord(selectedAnswer: getOptions[index])
 										}){
@@ -120,7 +121,7 @@ struct QuestionView: View {
 											.foregroundColor(Color.black.opacity(0.3)))
 									.frame(width:180,height:60)
 									.overlay(
-										Text("回答")
+										Text("\(answerButtonLabel)")
 											.font(.system(size: 30))
 											.fontWeight(.semibold)
 											.foregroundColor(Color.white)
@@ -146,7 +147,10 @@ struct QuestionView: View {
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 					speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer.joined(separator: ""))
 				}
-			}
+				if lessonToday.language == "ch" {
+					answerButtonLabel = "回答"
+				}
+ 			}
 			.padding(10)
 			.background(
 				Image(lessonToday.myTheme.contentPageBackground)
