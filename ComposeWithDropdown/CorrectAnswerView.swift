@@ -39,7 +39,6 @@ struct CorrectAnswerView: View {
 		.background(
 			Image(lessonToday.myTheme.contentPageBackground)
 				.resizable()
-				.scaledToFit()
 		)
 		.onAppear(perform: {
 			SoundManager.instance.playSound(sound: lessonToday.myTheme.correctAnswerAudio)

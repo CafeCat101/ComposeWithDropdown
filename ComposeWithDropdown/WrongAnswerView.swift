@@ -81,7 +81,7 @@ struct WrongAnswerView: View {
 								.foregroundColor(Color("iconCorrectAnswerExample"))
 						)
 					
-					Text("\(lessonToday.quiz[lessonToday.at].answer.joined(separator: ""))")
+					Text("\(lessonToday.quiz[lessonToday.at].answer)")
 						.font(.system(size:55))
 						.foregroundColor(Color.black)
 					

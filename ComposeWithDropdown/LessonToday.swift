@@ -11,8 +11,8 @@ import SwiftUI
 class LessonToday: ObservableObject {
 	@Published var subject:String = "Let's compose a sentence(demo)！"
 	@Published var quiz: [Quiz] = [
-		Quiz(asking: "What color is the grass?", answer: ["The grass"," is"," green."], options:[], picture:""),
-		Quiz(asking: "What color is the cloud?", answer: ["The cloud"," is"," white."], options:[], picture:"")
+		Quiz(asking: "What color is the grass?", answer: "The grass is green.", options:["The grass"," is"," green."], picture:""),
+		Quiz(asking: "What color is the cloud?", answer: "The cloud is white", options:["The cloud"," is"," white."], picture:"")
 	]
 	@Published var optionShuffled = false
 	@Published var language = "en"

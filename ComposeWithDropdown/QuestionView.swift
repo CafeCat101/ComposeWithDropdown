@@ -20,6 +20,7 @@ struct QuestionView: View {
 	@State private var testSentence = ["Pingu"," and"," Robby"," like to"," go"," skiing.","Pingu"," and"," Robby"," like to"," go"," skiing."]
 	@State private var getOptions:[String] = []
 	@State private var answerButtonLabel = "Answer"
+	private let synthesizer = AVSpeechSynthesizer()
 	
 	var body: some View {
 		if goToView == "QuestionView"{
@@ -108,7 +109,7 @@ struct QuestionView: View {
 							
 							//if showAnswerBtn==true {
 							Button(action: {
-								if (makeSentence.joined(separator: "")==lessonToday.quiz[lessonToday.at].answer.joined(separator: "")) && lessonToday.at==lessonToday.quiz.count-1 {
+								if (makeSentence.joined(separator: "")==lessonToday.quiz[lessonToday.at].answer) && lessonToday.at==lessonToday.quiz.count-1 {
 									goToView = "FinishedView"
 								}else{
 									showAnswer = true
@@ -145,7 +146,7 @@ struct QuestionView: View {
 			.onAppear {
 				setQuizOptons()
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer.joined(separator: ""))
+					speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
 				}
 				if lessonToday.language == "ch" {
 					answerButtonLabel = "回答"
@@ -157,14 +158,14 @@ struct QuestionView: View {
 					.resizable()
 			)
 			.sheet(isPresented: $showAnswer){
-				if makeSentence.joined(separator: "")==lessonToday.quiz[lessonToday.at].answer.joined(separator: "") {
+				if makeSentence.joined(separator: "")==lessonToday.quiz[lessonToday.at].answer {
 					CorrectAnswerView(isPresented: $showAnswer)
 						.onDisappear(perform: {
 							lessonToday.at = lessonToday.at + 1
 							resetQuestionValue()
 							
 							DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer.joined(separator: ""))
+								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
 							}
 						})
 				}else{
@@ -175,7 +176,7 @@ struct QuestionView: View {
 							resetQuestionValue()
 							
 							DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer.joined(separator: ""))
+								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
 							}
 						})
 				}
@@ -201,9 +202,7 @@ struct QuestionView: View {
 			//:sometime the identifier string is changed. just print the speechVoice list again
 			utterance.rate = 0.3
 		}
-		
 
-		let synthesizer = AVSpeechSynthesizer()
 		synthesizer.speak(utterance)
 	}
 	
@@ -215,11 +214,14 @@ struct QuestionView: View {
 		//}else{
 		//makeSentence.append(chooseWord)
 		rememberWord = chooseWord
-		print(chooseWord)
-		print(makeSentence.count)
+		//print(chooseWord)
+		//print(makeSentence.count)
 		SoundManager.instance.playSound(sound: lessonToday.myTheme.chooseWord)
 		withAnimation{
 			animateSentence = true
+		}
+		if synthesizer.isSpeaking {
+			synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
 		}
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 			speak(textToSpeak: chooseWord)
@@ -228,7 +230,7 @@ struct QuestionView: View {
 	}
 	
 	private func isSentenceFinished(){
-		if makeSentence.count == lessonToday.quiz[lessonToday.at].answer.count {
+		if makeSentence.count == lessonToday.quiz[lessonToday.at].options.count {
 			withAnimation{
 				showAnswerBtn = true
 			}
