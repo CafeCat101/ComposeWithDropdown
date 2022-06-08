@@ -44,11 +44,10 @@ struct QuestionView: View {
 					VStack{
 						HStack{
 							Text(lessonToday.quiz[lessonToday.at].asking)
-								.font(.system(size:50))
+								.font(.system(size:40))
 								.foregroundColor(Color.white)
 							Spacer()
 						}
-						
 						Spacer().frame(height:20)
 						
 						HStack{
@@ -107,6 +106,24 @@ struct QuestionView: View {
 									)
 							}.buttonStyle(PlainButtonStyle())
 							
+							Button(action: {
+								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+							}) {
+								RoundedRectangle(cornerRadius: 22, style: .continuous)
+									.strokeBorder(Color.white,lineWidth: 1)
+									.background(
+										RoundedRectangle(cornerRadius: 22, style: .continuous)
+											.foregroundColor(Color.black.opacity(0.3)))
+									.frame(width:60,height:60)
+									.overlay(
+										Image(systemName: "speaker.wave.2.circle")
+											.resizable()
+											.aspectRatio(contentMode: .fit)
+											.frame(width:30, height:30)
+											.foregroundColor(Color.white)
+									)
+							}.buttonStyle(PlainButtonStyle())
+							
 							//if showAnswerBtn==true {
 							Button(action: {
 								if (makeSentence.joined(separator: "")==lessonToday.quiz[lessonToday.at].answer) && lessonToday.at==lessonToday.quiz.count-1 {
@@ -145,13 +162,20 @@ struct QuestionView: View {
 			}
 			.onAppear {
 				setQuizOptons()
+				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+					if !lessonToday.quiz[lessonToday.at].asking.isEmpty {
+						speak(textToSpeak: lessonToday.quiz[lessonToday.at].asking)
+					} else {
+						speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+					}
+					
 				}
+				
 				if lessonToday.language == "ch" {
 					answerButtonLabel = "回答"
 				}
- 			}
+			}
 			.padding(10)
 			.background(
 				Image(lessonToday.myTheme.contentPageBackground)
@@ -165,7 +189,11 @@ struct QuestionView: View {
 							resetQuestionValue()
 							
 							DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+								if !lessonToday.quiz[lessonToday.at].asking.isEmpty {
+									speak(textToSpeak: lessonToday.quiz[lessonToday.at].asking)
+								} else {
+									speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+								}
 							}
 						})
 				}else{
@@ -202,7 +230,7 @@ struct QuestionView: View {
 			//:sometime the identifier string is changed. just print the speechVoice list again
 			utterance.rate = 0.3
 		}
-
+		
 		synthesizer.speak(utterance)
 	}
 	
