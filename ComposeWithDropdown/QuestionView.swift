@@ -204,7 +204,11 @@ struct QuestionView: View {
 							resetQuestionValue()
 							
 							DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-								speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+								if !lessonToday.quiz[lessonToday.at].asking.isEmpty {
+									speak(textToSpeak: lessonToday.quiz[lessonToday.at].asking)
+								} else {
+									speak(textToSpeak: lessonToday.quiz[lessonToday.at].answer)
+								}
 							}
 						})
 				}
